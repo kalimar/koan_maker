@@ -1,4 +1,5 @@
-== README
+README
+===============
 ##Simple koan maker
 * Allows you to create simple questions with hidden answer
 * Displays all questions in the left rail
