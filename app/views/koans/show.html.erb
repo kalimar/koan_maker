@@ -1,19 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+  
+<h2>
   <%= @koan.title %>
-</p>
+</h2>
 
-<p>
-  <strong>Question:</strong>
+<p class="lead">
   <%= @koan.question %>
 </p>
 
-<p>
-  <strong>Solution:</strong>
+<p><%= button_tag 'Solution', class: "btn btn-primary active", onclick: "$('#solution').toggle();" %>
+  </p>
+<pre id="solution" style="display:none">
   <%= @koan.solution %>
-</p>
-
-<%= link_to 'Edit', edit_koan_path(@koan) %> |
-<%= link_to 'Back', koans_path %>
+</pre>

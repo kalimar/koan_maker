@@ -1,29 +1,31 @@
-<%= form_for(@koan) do |f| %>
-  <% if @koan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@koan.errors.count, "error") %> prohibited this koan from being saved:</h2>
-
-      <ul>
-      <% @koan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="col-xs-12 col-sm-6 col-md-8">
+  <%= form_for(@koan) do |f| %>
+    <% if @koan.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@koan.errors.count, "error") %> prohibited this koan from being saved:</h2>
+    
+        <ul>
+          <% @koan.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="form-group">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :question %><br>
+      <%= f.text_area :question, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :solution %><br>
+      <%= f.text_area :solution, class: "form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "btn btn-default" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :question %><br>
-    <%= f.text_area :question %>
-  </div>
-  <div class="field">
-    <%= f.label :solution %><br>
-    <%= f.text_area :solution %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

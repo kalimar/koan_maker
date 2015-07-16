@@ -10,20 +10,24 @@ class KoansController < ApplicationController
   # GET /koans/1
   # GET /koans/1.json
   def show
+    @koans = Koan.all
   end
 
   # GET /koans/new
   def new
+    @koans = Koan.all
     @koan = Koan.new
   end
 
   # GET /koans/1/edit
   def edit
+    @koans = Koan.all
   end
 
   # POST /koans
   # POST /koans.json
   def create
+    @koans = Koan.all
     @koan = Koan.new(koan_params)
 
     respond_to do |format|
@@ -40,6 +44,7 @@ class KoansController < ApplicationController
   # PATCH/PUT /koans/1
   # PATCH/PUT /koans/1.json
   def update
+    @koans = Koan.all
     respond_to do |format|
       if @koan.update(koan_params)
         format.html { redirect_to @koan, notice: 'Koan was successfully updated.' }
@@ -54,6 +59,7 @@ class KoansController < ApplicationController
   # DELETE /koans/1
   # DELETE /koans/1.json
   def destroy
+    @koans = Koan.all
     @koan.destroy
     respond_to do |format|
       format.html { redirect_to koans_url, notice: 'Koan was successfully destroyed.' }
