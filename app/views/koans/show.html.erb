@@ -5,12 +5,10 @@
   <%= @koan.title %>
 </h2>
 
-<p class="lead">
-  <%= @koan.question %>
-</p>
+<%= simple_format @koan.question, class: "lead" %>
 
 <p><%= button_tag 'Solution', class: "btn btn-primary active", onclick: "$('#solution').toggle();" %>
   </p>
 <pre id="solution" style="display:none">
-  <%= @koan.solution %>
+  <%= simple_format @koan.solution %>
 </pre>
