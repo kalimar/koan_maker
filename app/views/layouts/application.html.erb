@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <% @koans.each do |koan| %>
+          <% @koans.sort_by { |a| a.title }.each do |koan| %>
              <li>
                <%= link_to koan.title, koan %>
              </li>
